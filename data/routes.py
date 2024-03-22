@@ -9,6 +9,6 @@ class Routes(SqlAlchemyBase):
 
     id = sqlalchemy.Column(sqlalchemy.Integer, primary_key=True, autoincrement=True)
     title = sqlalchemy.Column(sqlalchemy.String)
+    description = sqlalchemy.Column(sqlalchemy.String)
     duration = sqlalchemy.Column(sqlalchemy.Integer)
-    rating = sqlalchemy.Column(sqlalchemy.Float, sqlalchemy.ForeignKey("season.id"))
-    image = sqlalchemy.Column(sqlalchemy.String, nullable=True)
+    rating = sqlalchemy.Column(sqlalchemy.Float)

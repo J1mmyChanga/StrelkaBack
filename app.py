@@ -23,10 +23,11 @@ login_manager.init_app(app)
 api = Api(app)
 api.add_resource(RegisterResource, "/api/register")
 api.add_resource(LoginResource, "/api/login")
+api.add_resource(RoutesResource, "/api/routes")
+api.add_resource(PlacesResource, "/api/places")
 
 def main():
     session = db_session.create_session()
-    session.commit()
     WSGIRequestHandler.protocol_version = "HTTP/1.1"
     app.run(port=8080, host='0.0.0.0')
 
