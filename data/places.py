@@ -13,7 +13,7 @@ class Places(SqlAlchemyBase):
     long = sqlalchemy.Column(sqlalchemy.Float)
     lat = sqlalchemy.Column(sqlalchemy.Float)
     rating = sqlalchemy.Column(sqlalchemy.Float)
-    image = sqlalchemy.Column(sqlalchemy.BLOB)
+    image = sqlalchemy.Column(sqlalchemy.String)
 
     route = orm.relationship("Routes",
                              secondary="routes_to_places",
