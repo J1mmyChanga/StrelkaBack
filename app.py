@@ -1,12 +1,8 @@
 import os
 
-import requests
-import json
-
 from flask_restful import Api
-from flask import Flask, request, flash, redirect, url_for, send_from_directory
+from flask import Flask, request, flash, redirect, send_from_directory
 from werkzeug.serving import WSGIRequestHandler
-from flask_login import LoginManager
 from werkzeug.utils import secure_filename
 
 from data import db_session
@@ -22,9 +18,6 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['JSON_AS_ASCII'] = False
 
 db_session.global_init('db/strelka.db')
-
-login_manager = LoginManager()
-login_manager.init_app(app)
 
 api = Api(app)
 api.add_resource(RegisterResource, "/api/register")
