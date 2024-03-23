@@ -13,8 +13,15 @@ class Places(SqlAlchemyBase):
     long = sqlalchemy.Column(sqlalchemy.Float)
     lat = sqlalchemy.Column(sqlalchemy.Float)
     rating = sqlalchemy.Column(sqlalchemy.Float)
+    category = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey("categories.id"))
     image = sqlalchemy.Column(sqlalchemy.String)
 
-    route = orm.relationship("Routes",
-                             secondary="routes_to_places",
-                             backref="places")
+    routes = orm.relationship(
+        "Routes",
+        secondary="routes_to_places",
+        backref="places"
+    )
+    categories = orm.relationship(
+        "Categories",
+        backref="places"
+    )
