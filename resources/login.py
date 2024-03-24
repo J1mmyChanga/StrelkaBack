@@ -19,9 +19,5 @@ class LoginResource(Resource):
             return jsonify({"err": "Wrong nickname"})
 
         if user.check_password(password):
-            return jsonify({
-                "id": user.id,
-                "email": user.email,
-                "image": base64.b64encode(open("." + user.image, "rb").read()).decode("utf-8")
-            })
+            return jsonify("success")
         return jsonify({"err": "Wrong password"})

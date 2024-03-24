@@ -10,7 +10,6 @@ class RegisterResource(Resource):
     def post():
         password = request.json["password"]
         email = request.json["email"]
-        image = request.json["image"]
 
         session = db_session.create_session()
         user = Users(
