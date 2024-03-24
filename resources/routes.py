@@ -16,6 +16,7 @@ class RoutesResource(Resource):
             'id': i.id,
             'title': i.title,
             'description': i.description,
+            'duration': i.duration,
             'rating': i.rating,
             }
             res.append(d)
