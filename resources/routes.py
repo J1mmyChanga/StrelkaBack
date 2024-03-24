@@ -17,6 +17,7 @@ class RoutesResource(Resource):
             'title': i.title,
             'description': i.description,
             'duration': i.duration,
+            'category': i.category,
             'rating': i.rating,
             }
             res.append(d)

@@ -19,6 +19,7 @@ class PlacesResource(Resource):
             'long': i.long,
             'lat': i.lat,
             'rating': i.rating,
+            'category': i.category,
             'image': i.image
             }
             res.append(d)

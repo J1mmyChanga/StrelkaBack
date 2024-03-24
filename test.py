@@ -10,8 +10,8 @@ pl1 = Places(id=1, title='деревня Борок', description='Круто л
 pl2 = Places(id=2, title='парк Реадовка', description='Главное в озере не купаться', lat=54.3467, long=35.789, rating=4.2, category='2', image='2.jpg')
 pl3 = Places(id=3, title='Бункер Гитлера', description='Там вроде Гитлер застрелился', lat=54.3267, long=35.9053, rating=4.4, category='3', image='3.jpg')
 
-r1 = Routes(id=1, title='Исток', description='Вдоль реки Днепр', duration=50, rating=4.9)
-r2 = Routes(id=2, title='Повторение', description='Вокруг Смоленска', duration=45, rating=4.6)
+r1 = Routes(id=1, title='Исток', description='Вдоль реки Днепр', category='1', duration=50, rating=4.9)
+r2 = Routes(id=2, title='Повторение', description='Вокруг Смоленска', category='2', duration=45, rating=4.6)
 
 cat1 = Categories(id=1, title='Еда')
 cat2 = Categories(id=2, title='Развлечения')

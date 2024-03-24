@@ -12,3 +12,9 @@ class Routes(SqlAlchemyBase):
     description = sqlalchemy.Column(sqlalchemy.String)
     duration = sqlalchemy.Column(sqlalchemy.Integer)
     rating = sqlalchemy.Column(sqlalchemy.Float)
+    category = sqlalchemy.Column(sqlalchemy.Integer, sqlalchemy.ForeignKey("categories.id"))
+
+    categories = orm.relationship(
+        "Categories",
+        backref="routes"
+    )
