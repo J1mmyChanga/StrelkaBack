@@ -27,10 +27,9 @@ class PlacesResource(Resource):
 
     @staticmethod
     def post():
-        to_return = []
         session = db_session.create_session()
         place = session.get(Places, request.json["id"])
-        to_return.append({
+        to_return = {
             'id': place.id,
             'title': place.title,
             'description': place.description,
@@ -39,5 +38,5 @@ class PlacesResource(Resource):
             'rating': place.rating,
             'category': place.category,
             'image': place.image
-        })
+        }
         return jsonify(to_return)

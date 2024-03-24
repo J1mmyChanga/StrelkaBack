@@ -25,15 +25,14 @@ class RoutesResource(Resource):
 
     @staticmethod
     def post():
-        to_return = []
         session = db_session.create_session()
         route = session.get(Routes, request.json["id"])
-        to_return.append({
+        to_return = {
             'id': route.id,
             'title': route.title,
             'description': route.description,
             'duration': route.duration,
             'category': route.category,
             'rating': route.rating,
-        })
+        }
         return jsonify(to_return)
