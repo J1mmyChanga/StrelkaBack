@@ -22,6 +22,7 @@ cat3 = Categories(id=3, title='Туризм')
 
 user = Users(id=1, email='kowlad@aboba.ru')
 user.set_password('12345678')
+session.add(user)
 
 for i in range(1, 4):
     session.add(eval(f'cat{i}'))
