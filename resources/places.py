@@ -1,5 +1,5 @@
 from flask_restful import Resource
-from flask import jsonify
+from flask import jsonify, request
 
 from data import db_session
 from data.places import Places
@@ -24,3 +24,20 @@ class PlacesResource(Resource):
             }
             res.append(d)
         return jsonify(res)
+
+    @staticmethod
+    def post():
+        to_return = []
+        session = db_session.create_session()
+        place = session.get(Places, request.json["id"])
+        to_return.append({
+            'id': place.id,
+            'title': place.title,
+            'description': place.description,
+            'long': place.long,
+            'lat': place.lat,
+            'rating': place.rating,
+            'category': place.category,
+            'image': place.image
+        })
+        return jsonify(to_return)
